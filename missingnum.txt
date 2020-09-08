@@ -1,0 +1,20 @@
+class Solution {
+    public int missingNumber(int[] nums) {
+        Arrays.sort(nums);
+        int x = 0;
+        int y = nums.length;
+        while(x < y)
+        {
+            int mid = (x + y)/2;
+            if(nums[mid] > mid)
+            {
+                y = mid;
+            }
+            else
+            {
+                x = mid + 1;
+            }
+        }
+        return y;
+    }
+}
