@@ -1,0 +1,37 @@
+class Solution {
+    public String reverseVowels(String s) {
+        ArrayList<Character> List = new ArrayList<Character>();
+        List.add('a');
+        List.add('e');
+        List.add('i');
+        List.add('o');
+        List.add('u');
+        List.add('A');
+        List.add('E');
+        List.add('I');
+        List.add('O');
+        List.add('U');
+        char[] arr = s.toCharArray();
+        int i = 0; 
+        int j = s.length()-1;
+        while(i < j)
+        {
+            if(!List.contains(arr[i]))
+            {
+                i++;
+                continue;
+            }
+            if(!List.contains(arr[j]))
+            {
+                j--;
+                continue;
+            }
+            char temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--; 
+        }
+        return new String(arr);
+    }
+}
