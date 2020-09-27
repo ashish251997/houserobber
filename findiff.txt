@@ -1,0 +1,16 @@
+class Solution {
+    public char findTheDifference(String s, String t) {
+        char[] x = s.toCharArray();
+        char[] y = t.toCharArray();
+        int tsum=0;
+        for(char c : y)
+        { 
+            tsum = tsum + c;
+        }
+        for(char c : x)
+        { 
+            tsum = tsum - c;
+        }
+        return (char)tsum;
+    }
+}
