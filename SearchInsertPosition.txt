@@ -1,0 +1,37 @@
+/* Algorithm
+step1: Declare nums and target.
+step2: check the statement wheather target is greater or lesser.
+step3: return length of nums if greater.
+step4: initialize i and j.
+step5: check the loop.
+step6: calculate the midpoint.
+step7: check the statement wheather  target is greater or  lesser then mid.
+step8: update  i with mid plus 1 if greater.
+step9: update j with mid if not.
+step8: return the value of i.
+                               */
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        if(target>nums[nums.length-1])
+        {
+            return nums.length;
+        }
+        int i=0;
+        int j=nums.length-1;
+        while(i<j)
+        {
+            int mid = i+(j-i)/2;
+            if(target>nums[mid])
+            {
+                i=mid+1;
+            }
+            else
+            {
+                j=mid;
+            }
+        }
+        return i;
+    }
+}
+  /* space complexity =O(logN)
+     time complexity =O(logN)  */
