@@ -1,0 +1,35 @@
+/* Algorithm
+step1: Declare x.
+step2: check statement wheather x is '0' or '1'.
+step3: if yes return x.
+step4: Assign start to 1 and end to x and ans to 0.
+step5: check the loop till it satisfies the condition.
+step6: calculate value of mid .
+step7: check the statement for a perfect square.
+step8: return mid if x is a perfect square.
+step9: check the statment wheather mid*mid is less then x.
+step10: update start and ans if yes.
+step11: if no then update end with end-1.
+step12: return the value of ans
+                                  */
+class Solution {
+    public int mySqrt(int x) {
+        long start = 1, end = x, ans =0;
+        while(start <= end) 
+        { 
+            long mid = (start + end) / 2;  
+            if(mid*mid == x) 
+                return (int)mid; 
+            if(mid*mid < x) 
+            { 
+                start = mid + 1; 
+                ans = mid; 
+            } 
+            else  
+                end = mid-1; 
+        } 
+        return (int)ans; 
+    }
+}
+/* space complexity=O(1)
+   time complexity=O(log n) */
