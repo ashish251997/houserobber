@@ -1,0 +1,65 @@
+/* Algorithm
+ step1: Determine the length 
+ step2: create an array,size'n'
+ step3: convert string to sequance of characters
+ step4: count each  number
+ step5: implement switch statement
+ step6: set sum to 0 
+ step7: check the condition
+ step8: check the statement
+ step9: add it to sum
+ step10: update sum
+ step11: return result
+                    */
+
+class Solution {
+    public int romanToInt(String x) 
+    {
+        int n=x.length();
+        int nums[]=new int[n];
+        char arr[]=x.toCharArray();
+        for(int i=0;i<n; i++)
+          { 
+            switch(arr[i])
+            {
+                case 'I':
+                    nums[i]=1;
+                    break;
+                case 'V':
+                    nums[i]=5;
+                    break;
+                case 'X':
+                    nums[i]=10;
+                    break;
+                case 'L':
+                    nums[i]=50;
+                    break;
+                case 'C':
+                    nums[i]=100;
+                    break;
+                case 'D':
+                    nums[i]=500;
+                    break;
+                case 'M':
+                    nums[i]=1000;
+                    break;
+            }
+        }
+        int sum=0;
+        for(int i=0;i<n-1;i++) 
+        {
+            if(nums[i]>=nums[i+1])
+            {
+                sum=sum+nums[i];
+            }
+            else {
+                sum=sum-nums[i];
+            }
+        }
+        sum=sum+nums[n-1];
+        return sum;
+    }
+}
+
+/* space complexity= O(n)
+    time complexity=  O(n)   */
