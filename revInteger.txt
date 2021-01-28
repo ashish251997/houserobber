@@ -1,0 +1,27 @@
+/* algorithm
+  step1: set the reverse value to '0'
+  step2: go through each integer
+  step3: multiply the reversed integer and keep final reminder in temp variable
+  step4: check wheather the temp value is equal to the previous reversed value
+  step5: if not equal retrun '0'
+  step6: if yes store the temp value in reverse
+
+
+ */
+
+
+class Solution {
+    public int reverse(int n){
+        int reverse = 0;
+        
+        while(n != 0){
+            int temp = reverse * 10 + n % 10;
+            if(temp / 10 != reverse){
+                return 0;
+        }
+            reverse = temp;
+            n=n/10;
+        }
+        return reverse;
+    }
+} 
