@@ -1,0 +1,23 @@
+/* algorithm
+step1: take the integer value.
+step2: convert inter into string.
+step3: reverse the string.
+step4: go through each integer.
+step5: check the string if it is equal.
+step6: return true if equal or 
+       return false if not equal.
+  */
+class Solution {
+    public boolean isPalindrome(int x) {
+        String v= String.valueOf(x).toString();
+        String w=new StringBuffer(v).reverse().toString();
+        for(int i=0;i<v.length();i++)
+        { 
+            if(v.charAt(i)!=w.charAt(i))
+                return false;
+            }
+            return true;
+    }
+}
+  /*space complexity =O(1)
+    time cmplexity =O(n)*/
