@@ -1,0 +1,41 @@
+/*Algorithm
+step1: Set i to length of a-1.
+step2: set j to length of b-1.
+step3: set carry to 0.
+step4: check the loop for i and j greater and equal to 0.
+step5: set carry to sum.
+step6: check statement wheather i greater than equal to 0.
+step7: if yes update sum.
+step8: check statement wheather j greater than equal to 0. 
+step9: Update sum if yes and append to sb.
+step10: Divide sum by 2 and store in carry
+step11: decrement i and j.
+step12: check the statement wheather carry is not equal to 0.
+step13: if yes append carry.
+step14: Reverse the string sb and return the value.
+                                                       */
+class Solution {
+    public String addBinary(String a, String b) {
+        StringBuilder sb=new StringBuilder();
+        int i = a.length()-1;
+        int j = b.length()-1;
+        int carry = 0;
+        while(i >= 0||j >= 0){
+            int sum = carry;
+            if(i >= 0)
+                sum = sum+a.charAt(i) - '0';
+            if(j >= 0)
+                sum = sum+b.charAt(j) - '0';
+                sb.append(sum % 2);
+                carry = sum / 2;
+                i--;
+                j--;
+        }
+        if(carry != 0)
+            sb.append(carry);
+        return sb.reverse().toString();
+    }
+}
+
+/* space complexity =O(n)
+   time complexity=O(n^2) */
