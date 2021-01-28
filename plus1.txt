@@ -1,0 +1,35 @@
+/* Algorithm 
+step1: Declare digits.
+step2: Run the loop from back to first.
+step3: check the statement for digit index not equal to 9
+step4: if yes increment digits and return.
+step5: set it to 0 if equal to 9.
+step6: check the statement wheather digits[0] is 0.
+step7: if yes create a new array .
+step8: set aar[0] to 1.
+step9: return arr.
+                                  */
+class Solution {
+    public int[] plusOne(int[] digits) {
+        for(int i = digits.length - 1; i >= 0; i--) 
+        {
+            if(digits[i] != 9)
+            {
+                digits[i]++;
+                break;
+            }
+            else{
+                digits[i] = 0;
+            }
+        }
+        if(digits[0] == 0)
+        {
+            int arr[] = new int[digits.length + 1];
+            arr[0] = 1;
+            return arr;
+        }
+        return digits;
+    }
+}
+/*space complexity=O(n^2)
+  time complexity=O(n)   */
