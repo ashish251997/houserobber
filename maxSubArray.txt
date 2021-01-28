@@ -1,0 +1,25 @@
+/* Algorithm 
+step1: Declare array nums.
+step2: Assign value of nums[0] to result.
+step3: create a new pointer.
+step4: run the loop from 1 to less then length of nums.
+step5: update sum[i] with max value.
+step6: update result with max value.
+step7: return the value of result.
+                                     */
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int result = nums[0];
+        int sum[] =  new int[nums.length];
+        sum[0] = nums[0];
+        for(int i=1; i<nums.length; i++)
+        {
+            sum[i] = Math.max(nums[i], sum[i-1] + nums[i]);
+            result = Math.max(result, sum[i]);
+        }
+        return result;
+    }
+}
+
+/* time complexity = O(n)
+   space complexity =O(n)  */
