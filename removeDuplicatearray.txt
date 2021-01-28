@@ -1,0 +1,34 @@
+/*Algorithm
+step1: create a listnode.
+step2: check statement wheather head is null.    
+step3: if yes return head.
+step4: assign cur to head of list.
+step5: check wheather value of cur and next value of cur are not same.
+step6: check the statement wheather next value of cur is equal to cur value.
+step7: go to the next value if yes
+step8: update current value if no
+step9: return the value of head.
+    */
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+       if(head == null)
+       {
+           return head;
+       }
+        ListNode cur = head;
+        while (cur != null && cur.next != null) {
+            if (cur.next.val == cur.val)
+            {
+                cur.next = cur.next.next;
+            } 
+            else
+            {
+                cur = cur.next;
+            }
+        }
+        return head;
+    }
+}
+
+/* space complexity=O(n)
+   time complexity=O(n)  */
