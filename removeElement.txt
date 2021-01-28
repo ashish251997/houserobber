@@ -1,0 +1,28 @@
+/* Algorithm
+step1: initialize i:
+step2: initialize j:
+step3: check the loop wth length.
+step4: check wheather val and value of j are similar.
+step5: if yes update i.
+step6: increment i.
+step7: if no only increment j
+step8: return the values in i.
+                             */
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int i=0;
+        int j=0;
+        while(j < nums.length)
+        {
+            if(nums[j] != val)
+            {
+                nums[i] = nums[j];
+                i++; 
+            }
+            j++;
+        }
+        return i;
+    }
+}
+  /* space complexity=O(n)
+  time complexity= O(n)  */
