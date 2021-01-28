@@ -1,0 +1,38 @@
+/* Algorithm
+step1: create a stack.
+step2: read each character in the string.
+step3: push it in the stack.
+step4: check and match the stack.
+step5: remove the character from stack or return false.
+step6: check the stack.
+step7: check and compare the characters in pairs.
+                                                  */
+class Solution {
+        public boolean isValid(String str){ 
+             Stack<Character> stack = new Stack<Character>();               
+             for(char ch : str.toCharArray())
+            { 
+                if (ch=='('||ch=='{'||ch=='['){ 
+                stack.push(ch); 
+                }
+                 else
+                 { 
+                   if (!stack.isEmpty() && isPairParenthesis(stack.peek(), ch)) {
+                         stack.pop(); 
+                   }
+                     else
+                     { 
+                         return false; 
+                } 
+            } 
+        } 
+            return stack.isEmpty(); 
+        } 
+    private boolean isPairParenthesis(char left, char right) { 
+        return left == '(' && right == ')' || left == '{' && right == '}'  || left == '[' && right == ']'; 
+    }
+}
+
+
+ /* time complexity =O(1)
+    space complexity =O(1) */
