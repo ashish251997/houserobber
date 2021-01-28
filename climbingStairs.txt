@@ -1,0 +1,29 @@
+/* Algorithm
+step1: Declare n.
+step2: check statement wheather n is less than or equal to 1.
+step3: return the value 1 if yes.
+step4: create a new array with size n+1.
+step5: initialize nums[0] and nums[1] to 1.
+step6: run the loop from i=2 until it satisfies the condition.
+step7: calculate nums[i].
+step8: return the value of nums[n].
+                                       */
+class Solution {
+    public int climbStairs(int n) {
+        if(n<=1) 
+        {
+            return 1;
+        }
+        int nums[] = new int[n + 1];
+        nums[0] = 1;
+        nums[1] = 1;
+        for(int i = 2; i <= n; i++)
+        {
+            nums[i] = nums[i-2]+nums[i-1];
+        }
+        return nums[n];
+    }
+}
+
+/* spacce complexity =O(n)
+   time complexity=O(n) */
