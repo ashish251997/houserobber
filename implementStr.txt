@@ -1,0 +1,30 @@
+/* Algorithm
+step1: Declare haystack and needle.
+step2: check wheather haystack and needle are null.
+step3: return 0 if yes.
+step4: check the length of needle.
+step5: return 0 if length is 0.
+step6: check wheather given string contains needle.
+step7: return index value of the first letter of needle in given input string.
+step8: return -1  if not.
+                                  */
+class Solution {
+    public int strStr(String haystack, String needle) {
+        if(haystack==null || needle==null)
+        {
+            return 0;
+        }
+        if(needle.length() == 0)
+        {
+            return 0;
+        }
+        if(haystack.contains(needle))
+        {
+            return haystack.indexOf(needle);
+        }
+        else
+            return -1;
+    }
+}
+  /* space complexity =O(1)
+     time complexity = O(n) */
