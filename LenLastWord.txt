@@ -1,0 +1,35 @@
+/* Algorithm
+step1: Declare string s.
+step2: initialize position(pos) to '0'.
+step3: Run the loop from backwards . 
+step4: check statement for the space at starting of loop.
+step5: if yes continue.
+step6: break if space exists at any other position.
+step7: increment position(pos).
+step8: return the value of pos.
+                                 */
+class Solution {
+    public int lengthOfLastWord(String s) {
+        int pos = 0;
+        for(int i=s.length()-1;i>=0;i--)
+        {
+            if(s.charAt(i)==' ')
+            {
+                if(pos==0)
+                {
+                    continue;
+                }
+                else {
+                    break;
+                }
+            }
+            else{
+                pos++;
+            }
+        }
+        return pos;
+    }
+}
+
+/*  space complexity= O(n)
+    time complexity=O(n) */
