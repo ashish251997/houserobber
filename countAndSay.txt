@@ -1,0 +1,53 @@
+/* Algorithm
+step1: Declare n.
+step2:check n less then or equal to '0'. 
+step3: return null is yes.
+step4: store result as 1.
+step5: initialize i to 1.
+step6: check te loop for i is less then n.
+step7: create string builder method.
+step8: initialize count to 1.
+step9: Run the loop from j is 1 until j is less then length of the result.
+step10: check the statement is equal.
+step11: increment count is yes.
+step12: less append count and character.
+step13: update count to 1.
+step14: if for loop fails the condition.
+step15: append count and character at length of result -1.
+step16: update result.
+step17: increment i and return the value of result.
+                                                 */
+class Solution {
+    public String countAndSay(int n) {
+        if (n <= 0)
+        {
+            return null;
+        }
+        String result = "1";
+        int i = 1;
+        while (i < n)
+        {
+            StringBuilder sb = new StringBuilder();
+            int count = 1;
+            for (int j = 1; j < result.length(); j++)
+            {
+                if (result.charAt(j) == result.charAt(j - 1))
+                {
+                    count++;
+                }
+                else{
+                    sb.append(count);
+                    sb.append(result.charAt(j - 1));
+                    count = 1;
+                }
+            }
+            sb.append(count);
+            sb.append(result.charAt(result.length() - 1));
+            result = sb.toString();
+            i++;
+        }
+        return result;
+    }
+}
+/* space complexity = O(N)
+   time complexity = O(nlogn)  */
