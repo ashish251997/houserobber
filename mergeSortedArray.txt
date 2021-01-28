@@ -1,0 +1,17 @@
+/*ALgorithm
+step1: declare nums1,m,n,,nums2;
+step2: Run the loop from 0 to i less then n.
+step3: update nums[i+m] with nums2.
+step4: sort the array nums1.
+                               */
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        for (int i = 0;i < n;i++)
+        {
+            nums1[i + m] = nums2[i];
+        }
+        Arrays.sort(nums1);
+    }
+}
+/* space complexity =O(n^2)
+   time complexity = O(n) */
