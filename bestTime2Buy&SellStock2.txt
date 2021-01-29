@@ -1,0 +1,29 @@
+/*Algorithm
+step1: Declare prices.
+step2: initialize maxProfit to 0.
+step3: check the statment wheather length of prices is equal or less than 1.
+step4: if yes then return maxProfit.
+step5: Run the loop from i is equal to 1 until i is less than length of prices.
+step6: check wheather value at prices(i) is greater than the value at prices(i-1).
+step7: if the statment is true then update maxProfit with maxProfit + value at prices(i)-value at prices(i-1).
+step8: return the value of maxProfit.
+*/
+class Solution {
+    public int maxProfit(int[] prices) {
+         int maxProfit = 0;
+        if(prices.length<=1)
+        {
+            return maxProfit;
+        }
+        for(int i=1; i<prices.length; i++)
+        {
+            if(prices[i]>prices[i-1])
+            {
+               maxProfit = maxProfit+(prices[i]-prices[i-1]); 
+            }
+        }
+        return maxProfit;
+    }
+}
+/*space complexity=O(1)
+  time complexity=O(n)*/
