@@ -1,0 +1,52 @@
+/*Algorithm
+step1: create new arrays result, queue, ls.
+step2: check statment wheather root is equal to null.
+step3: return result is yes.
+step4: add root value to queue and 0 to ls.
+step5: check the loop wheather size of q is greater than 0.
+step6: remove the value 0 in q store it in node.
+step7: remove 0 in ls store it in level.
+step8: check the statment wheather size of result is  less than or equal to level.
+step9: add 0 and create a arraylist in result.
+step10: check the statment wheather lefft node is not equal to null.
+step11: add left node to q and level+1 to ls.
+ste12: check wheather right node is not null.
+step13: if yes add right node to q and level+1 to ls.
+step14: return the value of result.
+  */
+class Solution {
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        ArrayList<TreeNode> q = new ArrayList<TreeNode>();
+        ArrayList<Integer> ls = new ArrayList<Integer>();
+        if(root == null)
+        {
+            return result;
+        }
+        q.add(root);
+        ls.add(0);
+        while(q.size() > 0)
+        {
+            TreeNode node = q.remove(0);
+            int level = ls.remove(0);
+            if(result.size() <= level)
+            {
+                result.add(0, new ArrayList<Integer>());
+            }
+            result.get(result.size() - level - 1).add(node.val);
+            if(node.left != null)
+            {
+                q.add(node.left);
+                ls.add(level + 1);
+            }
+            if(node.right != null)
+            {
+                q.add(node.right);
+                ls.add(level + 1);
+            }
+        }
+        return result;
+    }
+}
+/*space complexity=O(n^2)
+  time complexity=O(n)*/
