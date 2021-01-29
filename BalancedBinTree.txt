@@ -1,0 +1,48 @@
+/*Algorithm
+step1: check the statment wheather root is null.
+step2: return true is yes.
+step3: check the statment wheather height of root is -1.
+step4: return false if yes.
+step5: create  class  and treenode as root.
+step6: check the statment wheather root is null.
+step7: return 0 if yes.
+step8: get the height of left subtree and store it in left.
+step9: get the height of right subtree and store it in right.
+step10: check the statment wheather left or right are equal to -1.
+step11: return -1 is yes.
+step12: if the value of (left - right) is greater than 1.
+step13: return the value -1 if yes.
+step14: return the maximum value between left and right by adding 1 to it.
+ */
+class Solution {
+    public boolean isBalanced(TreeNode root) {
+        if(root == null)
+        {
+            return true;
+        }
+        if(getHeight(root) == -1)
+        {
+			return false;
+        }
+        return true;
+    }
+    public int getHeight(TreeNode root) {
+        if(root == null)
+        {
+            return 0;
+        }
+        int left = getHeight(root.left);
+		int right = getHeight(root.right);
+        if(left == -1 || right == -1)
+        {
+            return -1;
+        }
+        if(Math.abs(left-right) > 1)
+        {
+			return -1;
+		}
+        return Math.max(left, right) + 1;
+    }
+}
+/*space complexity= O(n)
+  time complexity=  O(n) */
