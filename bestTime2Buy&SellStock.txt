@@ -1,0 +1,40 @@
+/*Algorithm
+step1: Declare prices.
+step2: check the statment wheather length of prices is equal to 0.
+step3: return 0 if yes.
+step4: create a new array called profit.
+step5: run the loop where i is 0 until i is less than length of profit.
+step6: until in the loop get profit of i to 0.
+step7: initialize min to prices of 0.
+step8: run the loop from i is 1 until i is less than length of prices.
+step9: check the statment wheather prices of i is less than min.
+step10: if yes update min with prices of i value.
+step11: update profit of i with the maximum value between profit of (i-1) and prices of (i-min).
+step12: return the value of profit of (length of prices - 1).
+  */
+class Solution {
+    public int maxProfit(int[] prices) {
+        if(prices.length == 0)
+        {
+            return 0;
+        }
+        int profit[]=new int[prices.length];
+        for(int i=0; i< profit.length; i++)
+        {
+            profit[i]=0;
+        }
+        int min = prices[0];
+        for(int i=1; i< prices.length; i++)
+        {
+            if(prices[i] < min)
+            {
+                min = prices[i];
+            }
+            profit[i]=Math.max(profit[i-1], prices[i]-min);
+        }
+        return profit[prices.length-1];
+    }
+}
+
+/*space complexity=O(n)
+  time complexity=O(n) */
