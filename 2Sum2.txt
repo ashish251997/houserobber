@@ -1,0 +1,41 @@
+/*Algorithm
+step1: Declare numbers and target.
+step2: check the statment wheather numbers are null or length of numbers is not 0.
+step3: if yes return mull.
+step4: initialize i to 0 and j to length of numbers -1.
+step5: check the loop wheather i is less than j.
+step6: store the value of numbers[i] plus numers[j] in x.
+step7: check the statment wheather x is less than target.
+step8: increment i if yes.
+step9: if x is greater than target then decrement j.
+step10: return i+1 and j+1.
+step11: else return null.
+*/
+class Solution {
+    public int[] twoSum(int[] numbers, int target) { 
+        if(numbers == null || numbers.length == 0)
+        {
+            return null;
+        }
+        int i = 0;
+	    int j = numbers.length - 1;
+        while(i < j) 
+        {
+            int x = numbers[i] + numbers[j];
+            if(x < target)
+            {
+                i++;
+            }
+            else if(x > target)
+            {
+                j--;
+            }
+            else{
+			return new int[]{ i + 1, j + 1 };
+		}
+	}
+        return null;
+    }
+}
+/*space complexity=O(n)
+  time complexity=O(n)*/
