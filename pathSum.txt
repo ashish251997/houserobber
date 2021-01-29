@@ -1,0 +1,23 @@
+/*Algorithm
+ step1: Declare treenode as root and sum.
+ step2: check the statment wheather root is equal to null or not.
+ step3: return false if yes.
+ step4: check the statment wheather value of root is equal to sum and the nodes left and right of the root are also null.
+ step5: return true is yes.
+ step6: else return the path sum in which it subtract the root value from the sum when recurring down for left or a right node.
+     */
+class Solution {
+    public boolean hasPathSum(TreeNode root, int sum) {
+        if(root == null)
+        {
+            return false;
+        }
+        if(root.val == sum && (root.left == null && root.right == null))
+        {
+            return true;
+        }
+        return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
+    }
+}
+/*space complexity=O(1)
+  time complexity=O(n)*/
