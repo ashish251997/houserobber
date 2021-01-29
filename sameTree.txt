@@ -1,0 +1,26 @@
+/*Algorithm
+step1: Declare nodes p and q.
+step2: check the statement wheather p and q are null. 
+step3: return true.
+step4: check the statement wheather p and q are not null.
+step5: check condition where p and q values and left and rights nodes are similar.
+step6: return true is statement is correct else false.
+ */
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if(p==null && q==null)
+        {
+            return true;
+        }
+        if(p!=null && q!=null) {
+            if(p.val == q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right))
+            {
+                return true;
+            }            
+        }
+        return false;
+    }
+}
+
+/* space complexity=O(1)
+   time complexity=O(n)*/
