@@ -1,0 +1,19 @@
+/*Algorithm
+step1: DEclare the string s.
+step2: intialize result to 0.
+step3: Run the loop until the stirng has sequence of characters.
+step4: update the result by calculating result *26 and adding the value from char c - A and then with plus1.
+step5: when the loop breaks return the value of return.
+*/
+class Solution {
+    public int titleToNumber(String s) {
+        int result = 0;
+        for(char c : s.toCharArray())
+        {
+            result = result * 26 + (c - 'A') + 1;
+        }
+        return result;
+    }
+}
+/*space complexity=O(1)
+  time complexity=O(n)*/
