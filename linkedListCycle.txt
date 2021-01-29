@@ -1,0 +1,27 @@
+/*Algorithm
+step1: Declare listnode.
+step2: initialize i and j to head.
+step3: check the loop wheather i is not equal to null and i.next is not equal to null.
+step4: update j to next value and i with the next value of the next value.
+step5: check the statment finally wheather j and i are equal or not.
+step6: if equal then return true.
+step7: if not equal return false.
+ */
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        ListNode i = head;
+        ListNode j = head;
+        while(i != null && i.next != null)
+        {
+            j = j.next;
+            i = i.next.next;
+            if(j == i)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+/*space compelxity=O(1)
+  time complexity=O(n)*/
