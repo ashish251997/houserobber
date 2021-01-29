@@ -1,0 +1,35 @@
+/*Algorithm
+step1: Declare nums and k.
+step2: check the statment wheather nums is null or length of nums is less than 2 or k is null.
+step3: return false is yes.
+step4: initialze int i to 0.
+step5: create a hashset and run a loop from j is 0 until j is less than nums length.
+step6: check the statement and if satisfies then return true.
+step7: check the statment wheather size of set is greater than or equal to k+1.
+step8: id yes then remove an element from that position.
+step9: else return false.
+*/
+class Solution {
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        if(nums==null || nums.length<2 || k==0)
+        {
+            return false;
+        }
+        int i=0; 
+        HashSet<Integer> set = new HashSet<Integer>();
+        for(int j=0; j<nums.length; j++)
+        {
+            if(!set.add(nums[j]))
+            {
+                return true;
+            }            
+            if(set.size()>=k+1)
+            {
+                set.remove(nums[i++]);
+            }
+        }
+        return false;
+    }
+}
+/*space complexity=O(n)
+  time complexity=O(n)*/
