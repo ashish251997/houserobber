@@ -1,0 +1,42 @@
+/* ALgorithm
+step1: check the statment wheather root is null.
+step2: return true is yes .
+step3: create two nodes left l and right r.
+step4: check the statment wheather l and r are null.
+step5: return true if yes.
+step6: check the statment wheather l is null or r is null.
+step7: return false if yes.
+step8: check the statement wheather the value of l and r are not equal.
+step9: return false is yes.
+step10: check the statement wheather the nodes of l.left and r.right are not symmetric.
+step11: return false is yes.
+step12: check the statement wheather the nodes of l.right and r.left are not symmetric.
+step13: return false.
+ */
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null)
+            return true;
+        return isSymmetric(root.left, root.right);
+}
+    public boolean isSymmetric(TreeNode l, TreeNode r) 
+    {
+        if(l==null && r==null)
+        {
+            return true;
+        }
+        else if (l==null || r==null)
+        {
+            return false;
+        }
+        if (l.val != r.val)
+		return false;
+        if (!isSymmetric(l.left, r.right))
+		return false;
+	    if (!isSymmetric(l.right, r.left))
+		return false;
+        return true;
+    }
+}
+/* space complexity =O(n^2)
+   time complexity = O(n) */
