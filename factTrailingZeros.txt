@@ -1,0 +1,21 @@
+/*Algorithm
+step1: Declare integer n.
+step2: initialize result to 0.
+step3: run the loop untill n is not 0.
+step4: then udpate n by diving n by 5.
+step5: and update result by adding result with n.
+step6: return the value o result.
+*/
+class Solution {
+    public int trailingZeroes(int n) {
+        int result=0;
+        while(n!=0)
+        {
+            n = n / 5;
+            result = result+n;
+        }
+        return result;
+    }
+}
+/*space complexity=O(1)
+  time complexity=O(1)*/
