@@ -1,0 +1,29 @@
+/*Algorithm
+step1: Create a new array result.
+step2: run the loop from i is equal until 0 to i is less than roindex+1.
+step3: add 1 too  result.
+step4: run the loop from j is i until j is greater than or equal to 0 and decrement j.
+step5: check the statment wheather j is Not equal to 0 and i.
+step6: if yes replace the value j and j-1 from result at index j in result.
+step7: return the value result.
+*/
+
+class Solution {
+    public List<Integer> getRow(int rowIndex) {
+        List<Integer> result = new ArrayList<Integer>();
+        for(int i = 0;i < rowIndex + 1; i ++)
+        {
+            result.add(1);
+            for(int j = i; j >=0; j --)
+            {
+                if(j != 0 && j != i)
+                {
+                    result.set(j, result.get(j) + result.get(j-1));
+                }
+            } 
+        }
+        return result;
+    }
+}
+/*space complexity=O(n)
+  time complexity=O(n)*/
