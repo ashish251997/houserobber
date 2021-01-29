@@ -1,0 +1,25 @@
+/*Algorithm
+step1: Declare nums.
+step2: check the statment wheather nums is equal to null  oor  length of nums is equal to 0.
+step3: if yes  return 0.
+step4: initialize result to 0.
+step5: Run the loop from i equal to 0 untill i is less than length of nums.
+step6: update result by perfroming XOR function between the result and the value at nums(i)
+step7: return the value of result.
+*/
+class Solution {
+    public int singleNumber(int[] nums) {
+         if(nums==null || nums.length==0)
+         {
+             return 0;
+         }
+        int result=0; 
+        for(int i=0;i<nums.length;i++)
+        {  
+            result=result^nums[i];  
+        }  
+        return result; 
+    }
+}
+/*space complexity=O(1)
+  time coomplexity=O(n)*/
