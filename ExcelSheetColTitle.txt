@@ -1,0 +1,22 @@
+/*Algorithm
+step1: Declare n.
+step2: check the loop wheather n is not null.
+step3: calculate the value and store it in temp.
+step4: now add character of A plus temp plus result and store it in result.
+step5: now update n by calculating n-1 and dividinng it by 26.
+step6: return the value of result.
+*/
+class Solution {
+    public String convertToTitle(int n) {
+        String result = "";
+        while (n != 0)
+        {
+            int temp = (n - 1) % 26;
+            result = (char)('A' + temp) + result;
+            n = (n - 1)/ 26;
+        }
+        return result;
+    }
+}
+/*space complexity=O(1)
+  time complexity=O(1)*/
