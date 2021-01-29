@@ -1,0 +1,36 @@
+/*Algorithm
+step1: create a new array called result.
+step2: declare i and run the loop form i = 0 to i is less than numrows.
+step3: in which create a new array toadd.
+step4: declare j and run the loop from j=0 to j is greater than i + 1. 
+step5: check wheather j is equal to 0 or j is equal to i or not.
+step6: if equal then  add 1 in the list toadd.
+step7: if not equal then store the value at i-1 from result in previous.
+step8: add the values j-1 and j from previous to toadd.
+step9: add toadd to result.
+step10: and return the result.
+    */
+class Solution {
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> result = new LinkedList<List<Integer>>();
+        for(int i = 0; i < numRows; i ++)
+        {
+            List<Integer> toAdd = new ArrayList<Integer>();
+            for(int j = 0; j < i + 1; j ++)
+            {
+                if(j == 0 || j == i)
+                {
+                    toAdd.add(1);
+                }
+                else {
+                    List<Integer> previous = result.get(i-1);
+                    toAdd.add(previous.get(j - 1) + previous.get(j));
+                }
+            }
+            result.add(toAdd);
+        }
+        return result;
+    }
+}
+/*space complexity=O(n^2)
+  time complexity=O(n^2)*/
