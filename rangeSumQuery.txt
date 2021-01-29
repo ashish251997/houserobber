@@ -1,0 +1,33 @@
+/*Algorithm
+step1: FOR sum of nums first initialze nums.
+step2: run the loop from i is 1 until i is less than length of nums.
+step3: now add the value at nums[i] with the value f nums of i-1. 
+step4: now for range check the statment wheather i is 0.
+step5: if yes than return  nums of j value. else return the value of nums[j]-nums[i-1].
+*/
+class NumArray {
+    
+    int nums[];
+    public NumArray(int[] nums) {
+        for(int i = 1;i < nums.length;i++)
+        {
+            nums[i] = nums[i] + nums[i-1];
+        }
+        this.nums = nums;
+        
+    }
+    
+    public int sumRange(int i, int j) {
+        if(i == 0)
+        {
+            return nums[j];
+        }
+        return nums[j] - nums[i-1];
+    }
+}
+
+/**
+ * Your NumArray object will be instantiated and called as such:
+ * NumArray obj = new NumArray(nums);
+ * int param_1 = obj.sumRange(i,j);
+ */
