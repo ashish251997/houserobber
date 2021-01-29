@@ -1,0 +1,33 @@
+/*ALGORITHM
+step1: Declare num.
+step2: initialize i to 0 and j to num.
+step3: run the loop until i is less than j. else return false.
+step4: calculate the mid and store value of mid * mid in temp.
+step5: check wheather temp is equal to mid if yes than return true.
+step6: and if temp is less than num then update i with mid+1.
+step7: and if temp is greater than update j with mid -1.
+*/class Solution {
+    public boolean isPerfectSquare(int num) {
+        long i = 0;
+        long j = num;
+        while(i <= j)
+        {
+            long mid = i + (j - i)/2;
+            long temp = mid * mid;
+            if(temp == num)
+            {
+                return true;
+            }
+            if(temp < num)
+            {
+                i = mid + 1;
+            }
+            else{
+                j = mid - 1;
+            }
+        } 
+        return false;
+    }
+}
+/*space complexity=O(1)
+  time compelxity=O(logn)*/
