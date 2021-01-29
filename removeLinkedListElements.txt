@@ -1,0 +1,30 @@
+/*Algorithm
+step1: Declare head and val.
+step2: Create a dummy listnode.
+step3: assign head to dummy.next and dummy to head.
+step4: check the loop wheather head.next is not null.
+step5: check the statment wheather value of head.next is equal to val.
+step6: if yes then assign head.next.next value to head.next.
+step7: if no then assign head.next to head.
+step8: return the value of dummy.next.
+*/
+class Solution {
+    public ListNode removeElements(ListNode head, int val) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        head = dummy;
+        while(head.next != null) 
+        {
+            if(head.next.val == val)
+            {
+                head.next = head.next.next;
+            }
+            else{
+                head = head.next;
+            }
+        }
+        return dummy.next;
+    }
+}
+/*space complexity=O(n)
+  time complexity=O(n)*/
